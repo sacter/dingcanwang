@@ -1,0 +1,79 @@
+<div class="surebg">
+    <nav class="navbar navbar-default nav" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed nav01" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#first" style="color:white"><i class="glyphicon glyphicon-chevron-left"></i>返回</a>
+                <span class="navbar-brand who" style="color:white">下单信息</span>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav01" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right nav01">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">订餐列表</a></li>
+                    <li><a href="#">店面浏览</a></li>
+                    <li><a href="#">个人信息</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container xinxi">
+        <h3>联系人：</h3>
+        <input type="text" placeholder="请输入姓名" class="input1" ng-model="ename">
+        <h3>性别：</h3>
+        <div class="danxuan">
+            <input type="radio" class="rao" name="sex">先生
+            <input type="radio" class="rao" name="sex">女士
+        </div>
+        <h3>联系电话：</h3>
+        <input type="tel" placeholder="请输入手机号码" class="input1" ng-model="number">
+        <h3>送餐地址：</h3>
+        <textarea ng-model="address"></textarea>
+        <div class="navbar-fixed-bottom sure">
+            <a href="#buy" data-toggle="modal" data-target="#myModal">确认下单！</a>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-danger">
+                    <h4 class="modal-title" id="myModalLabel">请确认您的订单！</h4>
+                </div>
+                <div class="modal-body">
+                    <div ng-repeat="pro in new" class="last">
+                        <span>{{pro.pname}}</span>
+                        <span>{{pro.pnum}}份</span>
+                        <span>{{pro.pj*pro.pnum}}元</span>
+                    </div>
+                    <p>姓名：{{ename}}</p>
+                    <p>电话：{{number}}</p>
+                    <p>地址：{{address}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning ding" ng-click="look()">再看看</button>
+                    <button class="btn btn-success ding" ng-click="succ()">下单</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var viewH=document.documentElement.clientHeight;
+    var viewW=document.documentElement.clientWidth;
+    $('.surebg').css({
+        'height':viewH,
+        'width':viewW
+    });
+    //模态框去掉背景色
+    $('.ding').click(function(){
+        $(".modal-backdrop").remove();
+    })
+</script>

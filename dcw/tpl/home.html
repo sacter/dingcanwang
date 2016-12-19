@@ -1,0 +1,19 @@
+<div id="bg">
+    <img ng-src="img/logo.png" class="logo img-responsive center-block"/>
+    <form method="post" class="singIn">
+        <div><i class="fa fa-user"></i><input type="text" placeholder="请输入用户名" id="uname"></div>
+        <div><i class="fa fa-lock"></i><input type="password" placeholder="请输入密码" id="upwd"></div>
+        <p id="ltr">{{uname}}</p>
+        <button id="sing" type="button" class="btn btn-primary btn-lg btn-block" ng-click="sing()">登陆</button>
+    </form>
+    <a href="#" class="losePwd">忘记密码?</a>
+    <p class="goCreat">还没有账号?<a href="#creat">去注册!</a></p>
+</div>
+<script>
+    var viewH=document.documentElement.clientHeight;
+    var viewW=document.documentElement.clientWidth;
+    $('#bg').css({
+        'height':viewH,
+        'width':viewW
+    });
+</script>

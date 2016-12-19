@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <script type="text/javascript" src = "js/angular.js"></script>
+    <style type="text/css">
+        .item{
+            height: 200px;
+            width:100px;
+            margin:5px;
+            border:1px solid #ccc;
+            float:left;
+        }
+    </style>
+</head>
+<body ng-app = "mapp" ng-controller = "mctrl">
+<!--<div class = "list">
+    <div class = "item" ng-repeat = "item in items">
+        <p class = "item-name"><span>商品名:</span>{{item.name}}</p>
+        <p class = "item-price"><span>价格:</span>{{item.price|currency:"￥"}}</p>
+        <input type = "button" ng-click = "buy($index)" value = "购买">
+    </div>
+</div>-->
+<div class = "item-car">
+    <p ng-repeat = "item in items">
+                <span>{{item.name}}&nbsp&nbsp&nbsp&nbsp<span>
+                <span>{{item.price|currency:"单价"}}&nbsp&nbsp&nbsp</span>
+                <input type = "button" value = "-" ng-click = "minus($index)"/>
+                <input type = "text" ng-model = "varlist.itemNum[$index]">
+                <input type = "button" value = "+" ng-click = "add($index)"/>
+                <span>单件总价:{{item.price*varlist.itemNum[$index]|currency:"￥"}}</span>
+    </p>
+    <p>总价：{{varlist.total|number:2}}</p>
+</div>
+<span style="background-color: #339966;"></span>
+<script type="text/javascript">
+var app = angular.module("mapp", []);
+app.controller("mctrl", function($scope) {
+// 数据源
+$scope.items = [{
+"name": "王老吉",
+"price": 4
+}, {
+"name": "老干妈",
+"price": 7.5
+}, {
+"name": "臭豆腐",
+"price": 7.32
+}, {
+"name": "饼干",
+"price": 22
+}, ];
+var len = $scope.items.length;
+var arr = [];
+// 循环为数组赋值
+for (var i = 0; i < len; i++) {
+arr[i] = 0;
+}
+// 检测是否变化，为了总价能够改变
+$scope.$watch("varlist.itemNum", function() {
+getTotal();
+}, true);
+// 定义变量
+$scope.varlist = {
+itemNum: arr,
+total: 0
+}
+// 购物的时候操作
+$scope.buy = function($index) {
+$scope.varlist.itemNum[$index]++;
+getTotal();
+}
+// -----
+$scope.minus = function($index) {
+if ($scope.varlist.itemNum[$index] == 0) {
+return;
+} else {
+$scope.varlist.itemNum[$index]--;
+getTotal();
+}
+}
+// ++++
+$scope.add = function($index) {
+$scope.varlist.itemNum[$index]++;
+getTotal();
+}
+// 计算总价
+var getTotal = function($index) {
+$scope.varlist.total = 0;
+for (var j = 0; j < len; j++) {
+$scope.varlist.total = $scope.varlist.total + $scope.varlist.itemNum[j] * $scope.items[j].price;
+}
+return $scope.varlist.total;
+}
+});
+</script>
+<span style="background-color: #339966;"></span>
+</body>
+</html>

@@ -1,0 +1,77 @@
+h2,h3,p{padding:0;margin:0;}
+/*首页css样式*/
+#bg{background:url(../img/bg.png) no-repeat center;background-size:cover;}
+.logo{width:40%;padding-top:16%;}
+.singIn{margin:0 auto;width:80%;margin-top:20%}
+.singIn div{margin-bottom:8%;height:40px;}
+.singIn div i{display:block;width:16%;height:40px;font-size:2.8rem;text-align: center;float: left;line-height:40px;background:rgba(51,51,51,1);color:#B2B2B2}
+.singIn div input{display:block;width:84%;height:40px;float: left;padding:10px;background:rgba(36,36,36,0.6);border:0;outline:medium;}
+.singIn button{margin-top:40px;display: block;background:rgba(255,121,0,0.8);outline:medium;border:0;letter-spacing:50px;color:#B2B2B2;font-size:2.2rem;font-family:"微软雅黑";padding-left:50px;}
+.losePwd{font-size:1.8rem;font-family:"微软雅黑";margin-left:66%;display:block;margin-top:4%;color:rgba(255,121,0,0.9)}
+.goCreat{text-align: center;font-size:1.8rem;font-family:"微软雅黑";margin-top:16%;color:#B2B2B2}
+#uname{color:white;}
+#upwd{color:white;}
+#ltr{height:1.2rem;font-size:1rem;text-align:center }
+
+/*注册页css样式*/
+.title1{width:100%;text-align: center;font-size:2.2rem;font-family:"微软雅黑";background:#E9852C;padding:14px 0;letter-spacing:40px;padding-left:40px;color:#EAEAEA;}
+#zhuce form{margin:0 auto;width:86%;margin-top:4%;}
+#zhuce form input{width:100%;height:36px;margin:16px 0;border:1px solid #B2B2B2;outline:medium;padding-left:10px;font-size:1.6rem;}
+#zhuce form button{width:100%;height:50px;background:rgba(255,121,0,0.8);outline:medium;border:0;letter-spacing:20px;color:#333;font-size:2rem;font-family:"微软雅黑";padding-left:30px;margin-top:60px;}
+#zhc{margin:10% 0;}
+#ltr1,#ltr2,#ltr3,#ltr4{text-align:center;font-size:12px;}
+#ltr3{height:12px;}
+/*首页页css样式*/
+.nav{background:#1C1B1E;}
+.nav01{background:#F8F8F8;}
+.nav02{background:#F8F8F8;}
+.who{margin-left:16%;}
+.firstL{border:0}
+.firstL button{outline:medium;background:#F7F7F7;outline:medium;border-top-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0;border-bottom-left-radius:0;}
+/*.firstL button:hover{background:white;color:#FF7800}*/
+.firstL button:focus{background:#FF7800;color:white}
+.input{width:90%;border:1px solid silver;margin: auto;height:40px;border-radius:4px;}
+.input a{display:block;height:40px;font-size:2.4rem;width:10%;margin-left:10px;float: left;line-height:40px;color:gray;}
+.input input{display:block;height:38px;font-size:2rem;width:72%;border:0;outline:medium;float: left;}
+.picL{outline:medium;}
+hr{margin:6px 0;}
+.foot1{background:#FFFFFF;padding:2% 0;padding-left:15px;overflow:hidden;}
+.dgShu{position:absolute;top:1%;background:#FF5400;}
+.gouwc{font-size:3rem;color:#FF7800;margin-left:5%;}
+.gongJi{margin-left:2%;font-size:1.8rem;color:#666666;font-family:"微软雅黑"}
+.gongJi span{font-size:2.1rem;color:#FF7800}
+.buy{position: absolute;top:0;right:0;background:#FF7800;color:white;padding:3.3% 6%;font-size:1.9rem;font-family:"微软雅黑"}
+.juti{display:none;}
+.juti img{width:80px;height:70px;}
+#tuijian{display: block;;}
+.left{padding:0}
+.right{padding-left:10px;padding-right:0;padding-top:6px;}
+.danj{font-size:1rem;color:#B7B7B7}
+.danjia{font-size:1.4rem;color:#FF7800}
+.xiaol{font-size:1rem;margin-left:12px;color:#B7B7B7}
+.jian{margin-left:36px;}
+.bian button{width:26px;height:26px;border:1px solid #FF7800;color:#FF7800;background:white;margin-top:4px;font-size:18px;outline: medium;}
+.bian button:focus{background:#FF7800;color:white;}
+.bian span{padding:0 4px;}
+.kong{height:70px;}
+.num{width:30px;border:0;text-align: center;outline:medium}
+
+/*确认订单css样式*/
+.surebg{background:#EEEEEE;height:100%}
+.sure a{color:white;font-size:1.9rem;font-family:"微软雅黑";text-decoration:none;display:block;background:#FF7800;width:100%;text-align: center;padding:10px 0;}
+#list li{display:flex;justify-content: space-between}
+#list li span{width:70px;}
+.checkB img{width:70px;height:50px;}
+.lum{background:#F7F7F7}
+.lum span{font-size:1.4rem;font-family:"微软雅黑";}
+/*
+.checkB span{margin-left:20px;}*/
+.xinxi h3 {margin-top: 30px;margin-bottom: 20px;font-size: 2rem;font-weight: 600;}
+.xinxi .input1 {border: 1px solid #CCCCCC;border-radius: 4px;width: 100%;padding: 10px;font-size: 1.6rem;outline: medium;}
+.xinxi .danxuan {font-size: 1.8rem;font-weight: 600;  }
+.xinxi .danxuan .rao {margin-left: 20px;margin-right: 10px;}
+.xinxi textarea {border: 1px solid #CCCCCC;border-radius: 4px;outline: medium;min-width: 100%;height: 80px;margin-bottom: 40px;}
+.xinxi .btn-success {margin-bottom: 50px;}
+.last{display: flex;justify-content:space-between;}
+
+

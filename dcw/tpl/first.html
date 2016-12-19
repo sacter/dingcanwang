@@ -1,0 +1,97 @@
+<div id="shouye">
+    <nav class="navbar navbar-default nav" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed nav01" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    <a class="navbar-brand" href="#home" style="color:white"><i class="glyphicon glyphicon-chevron-left"></i>退出</a>
+                    <span class="navbar-brand who" style="color:white">美厨小馆</span>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse nav01" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right nav01">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">订餐列表</a></li>
+                    <li><a href="#">店面浏览</a></li>
+                    <li><a href="#">个人信息</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="input">
+        <a ng-click="clear()" class="glyphicon glyphicon-remove"></a>
+        <input type="search" id="sousuo" placeholder="搜索菜品名称和原料..."/>
+        <a ng-click="see()" class="glyphicon glyphicon-search"></a>
+    </div>
+    <hr/>
+    <div class="content container-fluid picL">
+        <div class="row">
+            <div class="col-xs-4 left">
+                <div class="list-group firstL">
+                    <button class="list-group-item btn" ng-click="tuij()">
+                        <span class="badge">{{num}}</span>
+                        推荐菜品
+                    </button>
+                    <button class="list-group-item btn" id="btn1" ng-click="tejia()">
+                        <span class="badge"></span>
+                        每日特价
+                    </button>
+                    <button class="list-group-item btn" id="btn2" ng-click="taoc()">
+                        <span class="badge"></span>
+                        超值套餐
+                    </button>
+                    <button class="list-group-item btn" id="btn3" ng-click="mians()">
+                        <span class="badge"></span>
+                        风味面食
+                    </button>
+                    <button class="list-group-item btn" id="btn4" id="q" ng-click="chaoc()">
+                        <span class="badge"></span>
+                        精品炒菜
+                    </button>
+                    <button class="list-group-item btn" id="btn5" ng-click="liangc()">
+                        <span class="badge"></span>
+                        爽口凉菜
+                    </button>
+                    <button class="list-group-item btn" id="btn6" ng-click="xiaoc()">
+                        <span class="badge"></span>
+                        特色小吃
+                    </button>
+                    <button class="list-group-item btn" id="btn7" ng-click="yinl()">
+                        <span class="badge"></span>
+                        饮品饮料
+                    </button>
+                </div>
+            </div>
+            <div class="col-xs-8 right">
+                <div class="media juti" id="tuijian" ng-repeat="pro1 in box">
+                    <a class="media-left" href="#">
+                        <img src="img/{{pro1.ptu}}">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{pro1.pname}}</h4>
+                        <span class="danj">￥<span class="danjia" ng-model="pro1.pj">{{pro1.pj}}</span> 元</span>
+                        <span class="xiaol">销量：<span>{{pro1.xl}}</span> 份</span></br>
+                        <div class="bian">
+                            <button class="jian" ng-click="reduce($index);">-</button>
+                            <input type="text" class="num" ng-model="pro1.pnum" ng-change="change($index)"/>
+                            <!--<span ng-model="num" class="shu">{{num}}</span>-->
+                            <button class="jia"  ng-click="add($index)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="kong"></p>
+            </div>
+        </div>
+    </div>
+    <div class="foot1 navbar-fixed-bottom"><!--navbar-fixed-bottom 悬浮在浏览器底部的功能-->
+        <span class="badge dgShu">{{numAll()}}</span>
+        <a href="#gwc" class="glyphicon glyphicon-shopping-cart gouwc"></a>
+        <span class="gongJi">共计：<span  ng-bind="totalQuantity()|currency:'￥'"></span>元</span>
+        <a href="#gwc" class="buy">去结账</a>
+    </div>
+</div>
